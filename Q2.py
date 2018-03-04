@@ -10,14 +10,24 @@ def n_vogais(palavra):
   return quantidade
 
 def n_digitos(palavra):
-  return len(palavra)
+  n_digitos = 0
+  numeros = {"0", "1", "2", "3", "4", "5", "6", "7", "8", "9"}
+  for d in palavra:
+    if d in numeros:
+      n_digitos +=1
+  return n_digitos
 
 def n_palindromes(palavra):
-  letras = list(palavra)
+  pali = []
+  for letra in palavra:
+    if letra == ' ':
+      pass
+    else:
+      pali.append(letra)
   e_palindrome = True
-  for letra in letras:
-    if letra == letras[-1]:
-      letras.pop(-1)
+  for letra in pali:
+    if letra == pali[-1]:
+      pali.pop(-1)
     else:
       e_palindrome = False
       break

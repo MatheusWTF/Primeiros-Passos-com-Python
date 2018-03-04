@@ -12,7 +12,11 @@ def converte(decimal, base):
     convertido += str(n)
   return convertido
 
-n, b = int(input("Digite o número: ")), int(input("Digite a base: "))
-while n > 0 or 2 < b < 9:
-  print(converte(n, b))
+lista, n, b = [], int(input("Digite o número: ")), int(input("Digite a base: "))
+while n > 0 and b < 9 and b > 2:
+  valor = [n, b]
+  lista.append(valor)
   n, b = int(input("Digite o número: ")), int(input("Digite a base: "))
+
+for valor in lista:
+  print(converte(valor[0], valor[1]))
